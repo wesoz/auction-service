@@ -27,7 +27,7 @@ async function crateAuction(event, context) {
     }).promise();
   } catch (error) {
     console.error(error);
-    throw createError.InternalServerError(error);
+    throw new createError.InternalServerError(error);
   }
 
   return {
