@@ -15,3 +15,17 @@ npm install
 ```
 
 You are ready to go!
+
+## Deploy
+
+Run the command below to deploy the entire project
+
+```
+sls deploy --verbose
+```
+
+If only the javascript has been changed, just deploy the function
+
+```
+sls deploy -f FUNCTION_NAME --verbose
+```
