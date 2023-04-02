@@ -29,3 +29,18 @@ If only the javascript has been changed, just deploy the function
 ```
 sls deploy -f FUNCTION_NAME --verbose
 ```
+
+## Invoke functions
+
+To invoke a function to test the output, just run the command below with the parameter -l to print logs
+
+```
+sls invoke -f FUNCTION_NAME -l
+```
+
+If a function is invoked automaticaly by a schedule, you can see the outputs in the logs
+
+```
+sls logs -f FUNCTION_NAME
+```
+
