@@ -10,6 +10,7 @@ const dynamodb = new AWS.DynamoDB.DocumentClient();
 
 async function crateAuction(event, context) {
   const { title } = event.body;
+  const { email } = event.requestContext.authorizer;
 
   const now = new Date();
   const endDate = new Date();
@@ -24,6 +25,7 @@ async function crateAuction(event, context) {
     highestBid: {
       amount: 0,
     },
+    seller: email,
   };
 
   try {
