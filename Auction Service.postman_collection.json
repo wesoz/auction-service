@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "19fc6bb0-360c-41be-93b9-203ad12e91b7",
+		"name": "Auction Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13880576"
+	},
+	"item": [
+		{
+			"name": "Create Auction",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Shinny Bananas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AUCTIONS_HOST}}/auction",
+					"host": [
+						"{{AUCTIONS_HOST}}"
+					],
+					"path": [
+						"auction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Auctions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{AUCTIONS_HOST}}/auctions?status=OPEN",
+					"host": [
+						"{{AUCTIONS_HOST}}"
+					],
+					"path": [
+						"auctions"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "OPEN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Auction By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{AUCTIONS_HOST}}/auction/acbd51ff-9724-4ed5-9835-4b2f4d1cc02f",
+					"host": [
+						"{{AUCTIONS_HOST}}"
+					],
+					"path": [
+						"auction",
+						"acbd51ff-9724-4ed5-9835-4b2f4d1cc02f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Place Bid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 46\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AUCTIONS_HOST}}/auction/5d438651-cdee-4c4c-869b-4a43cd1d6bf3/bid",
+					"host": [
+						"{{AUCTIONS_HOST}}"
+					],
+					"path": [
+						"auction",
+						"5d438651-cdee-4c4c-869b-4a43cd1d6bf3",
+						"bid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Picture",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 46\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AUCTIONS_HOST}}/auction/5d438651-cdee-4c4c-869b-4a43cd1d6bf3/picture",
+					"host": [
+						"{{AUCTIONS_HOST}}"
+					],
+					"path": [
+						"auction",
+						"5d438651-cdee-4c4c-869b-4a43cd1d6bf3",
+						"picture"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Token",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Test Private Route",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
